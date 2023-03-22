@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def homography(camera_corners,world_corners):
+def homography(source_points,destination_points):
     A=[]
-    for i in range(camera_corners.shape[0]):
-        x,y=camera_corners[i,0],camera_corners[i,1]
-        xw,yw=world_corners[i,0],world_corners[i,1]
+    for i in range(source_points.shape[0]):
+        x,y=source_points[i,0],source_points[i,1]
+        xw,yw=destination_points[i,0],destination_points[i,1]
         A.append([x,y,1,0,0,0,-xw*x,-xw*y,-xw])
         A.append([0,0,0,x,y,1,-yw*x,-yw*y,-yw])
     A=np.array(A)
@@ -48,9 +48,15 @@ while True:
     # Draw the detected corners on the original image
     for corner in points:
         x,y = corner
-        cv2.circle(img, (x,y), 5, (0,0,255), -1)
+        cv2.circle(img, (x,y), 5, (0,0,0), -1)
     cv2.imshow('image', img)
     cv2.waitKey(1)
+
+for corner in points:
+    x,y = corner
+    cv2.circle(img, (x,y), 5, (0,255,0), -1)
+cv2.imshow('image', img)
+cv2.waitKey(0)
 # Close the window
 cv2.destroyAllWindows()
 
