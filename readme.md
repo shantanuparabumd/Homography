@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/112659509/226775994-0a440acb-c4bf-4089
 To run the program, open the command prompt/terminal and navigate to the directory where the source code files are located. Then, type the following command: python [filename].py.
 
 ## Github Link
-[Repository](https://github.com/shantanuparabumd/Homography.git)
+[Repository](https://github.com/shantanuparabumd/Hough-Lines.git)
 
 ## Destination Image
 ![destination](goal.jpg)
